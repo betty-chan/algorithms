@@ -117,15 +117,15 @@ function BFSAndLevel(root) {
     queue.push(root);
     while (queue.length > 0) {
         let current = queue.shift();
-        // currentLevelCount--;
+        currentLevelCount--;
         console.log(current.val);
         if (current.left) {
             queue.push(current.left)
-            // nextLevelCount++;
+            nextLevelCount++;
         }
         if (current.right) {
             queue.push(current.right)
-            // nextLevelCount++;
+            nextLevelCount++;
         }
         if (currentLevelCount === 0) {//当前层的没了，就得换层了
             currentLevelCount = nextLevelCount;
