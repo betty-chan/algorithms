@@ -10,7 +10,7 @@ function arrayToListNode(array) {
     }
     var nodes = []
     for (var i = 0; i < array.length; i++) {
-        var node = ListNode(array[i], null)
+        var node = new ListNode(array[i], null)
         nodes.push(node)
     }
     for (var i = 0; i < nodes.length - 1; i++) {
@@ -25,4 +25,14 @@ function listNodeToArray() {
         head = head.next
     }
     return array;
+}
+function deleteNode(head, item) {
+    if (!head) {
+        return null;
+    }
+    head.next = deleteNode(head.next, item)
+    if (item == head.val) {
+        head = head.next
+    }
+    return head;
 }
